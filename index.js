@@ -17,8 +17,8 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://charming-bombolone-60247a.netlify.app",
-    // origin:"http://localhost:3000",
+    // origin: "https://charming-bombolone-60247a.netlify.app",
+    origin:"http://localhost:3000",
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
@@ -32,12 +32,12 @@ app.get("/", (req, res) => {
   res.send("send data");
 });
 
-app.listen(6000, async () => {
+app.listen(6100, async () => {
   try {
     await connection;
     console.log("db is running");
   } catch (error) {
     console.log(error);
   }
-  console.log(`port is running 6000`);
+  console.log(`port is running 6100`);
 });
